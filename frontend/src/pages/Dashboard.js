@@ -15,6 +15,7 @@ const Dashboard = () => {
     { name: 'Completed', color: '#5cb85c' }
   ]);
   const [searchLabel, setSearchLabel] = useState('');
+  // eslint-disable-next-line no-unused-vars
   const [searchExistingLabel, setSearchExistingLabel] = useState('');
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
@@ -117,9 +118,7 @@ const Dashboard = () => {
     setSearchLabel(event.target.value);
   };
 
-  const handleSearchExistingLabel = (event) => {
-    setSearchExistingLabel(event.target.value);
-  };
+  
 
   // Filter labels
   const filteredLabels = labels.filter(label => label.name.toLowerCase().includes(searchExistingLabel.toLowerCase()));

@@ -30,9 +30,6 @@ const Header = () => {
         navigate('/login');
     };
 
-    const handleProfile = () => {
-        navigate('/profile');
-    };
 
     const handleLogin = () => {
         navigate('/login');
