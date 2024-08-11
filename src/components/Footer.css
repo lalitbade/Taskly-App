@@ -1,0 +1,125 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1; /* Allows the main content to push the footer to the bottom */
+}
+.footer {
+  background-color: #383428;
+  color: #ffffff;
+  padding: 40px 20px;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.footer-logo {
+  margin-bottom: 30px;
+}
+
+.footer-logo h1 {
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  color: #ffffff;
+  margin: 0;
+  
+  animation: gradientAnimation 5s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.footer-section h3 {
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-size: 20px;
+  border-bottom: 3px solid #000000;
+  padding-bottom: 10px;
+}
+.footer-section p {
+  color: #ffffff;
+  
+  font-size: 17px;
+  
+}
+
+.footer-section a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+
+.quick-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.quick-links li {
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-link img {
+  height: 40px;
+  width: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #ffffff;
+}
+
+.social-link img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.footer-bottom p{
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+  color: #ffffff;
+}

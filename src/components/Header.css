@@ -1,0 +1,135 @@
+/* Background and Container */
+.navbar-container {
+    position: fixed;
+    top: 20px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.1); /* Transparent with slight white tint */
+    border-radius: 20px; /* Curved borders */
+    padding: 10px 20px;
+    max-width: 90%; /* Ensures it doesn't take full width */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px); /* Adds blur to the background */
+    z-index: 1000;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    background: transparent; /* Ensures the navbar itself is transparent */
+    padding: 0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.logo-icon {
+    margin-right: 10px;
+    font-size: 1.8rem;
+}
+
+
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    color: #fff;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.nav-items {
+    margin: 0 10px;
+}
+
+.nav-links {
+    font-size: 1.15rem;
+    color: #ffffff;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+
+
+.avatar-icon {
+    font-size: 1.5rem;
+    margin-left: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .navbar-container {
+        max-width: 100%;
+    }
+
+    .nav-item {
+        margin: 5px 0;
+    }
+
+    .navbar-collapse {
+        text-align: center;
+    }
+}
+/* Add this to Header.css */
+
+/* User Menu Styling */
+.user-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.user-menu-options {
+    display: inline; /* Default to hidden */
+    position: absolute;
+    top: 40px; /* Adjust this based on your preference */
+    right: 0;
+    background: #fff;
+    color: #000;
+    text-align: center;
+    
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1000;
+    width: 90px;
+}
+
+.user-menu-options.show {
+    display: block; /* Show when the menu is visible */
+}
+
+.user-menu-button {
+    background: none;
+    border: none;
+    color: #000;
+    padding: 10px;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    display: block; /* Ensure buttons take full width */
+}
+
+.user-menu-button:hover {
+    background: #f0f0f0;
+}
+
+/* Avatar Icon Styling */
+.avatar-icon {
+    font-size: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+}

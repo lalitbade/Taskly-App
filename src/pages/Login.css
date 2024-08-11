@@ -1,0 +1,110 @@
+/* General Styles */
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+   z-index: -1;
+}
+.login-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+.signup-link{
+    font-size: 18px;
+    color: black;
+    font-weight: 600;
+}
+
+.background-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.88;
+}
+
+.login-box {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    border-radius: 10px;
+    height: 420px;
+    width: 490px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+.login-box h2 {
+    margin-bottom: 40px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    
+    background: none;
+    border: 0.5px solid white;
+    color: #fff;
+    font-size: 1rem;
+}
+
+input::placeholder {
+    color: #ffffff;
+}
+
+.login-btn {
+    background-color: #fdfdfd;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1rem;
+    cursor: pointer;
+    
+}
+
+
+
+.forgot-password {
+    margin-top: 15px;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+.forgot-password:hover {
+    color: #fff;
+    cursor: pointer;
+}
