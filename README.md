@@ -1,4 +1,4 @@
-Here's a template for a comprehensive `README.md` file that will help users understand and set up your Taskly app both locally and on a live server. You can modify it according to your specific needs:
+
 
 ---
 
