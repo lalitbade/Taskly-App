@@ -415,4 +415,249 @@
     transform: translate(-50%, -45%);
   }
 }
+/* Add Label Container */
+.add-label-container {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center; /* Center the button horizontally */
+  align-items: center; /* Center the button vertically if needed */
+}
 
+/* Add Label Button */
+.btn-add-label {
+  background: #ffffff;
+  border: 2px solid #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s;
+  text-align: center; /* Center the text inside the button */
+}
+
+.btn-add-label:hover {
+  background: #ff6b81;
+  border-color: #ff6b81;
+}
+
+/* Hide Button When Not Needed */
+.add-label-container.hidden {
+  display: none;
+}
+
+
+/* Label Dropdown Styling */
+.label-dropdown {
+  position: relative;
+  margin-top: 10px;
+  background: rgba(255, 255, 255); /* Darker background for better contrast */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.label-dropdown select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.3); /* Slightly lighter background for the select element */
+  color: #030303; /* White text color */
+  font-size: 14px;
+}
+
+/* Label Dropdown Styling */
+.label-dropdown {
+  position: relative;
+  margin-top: 10px;
+  background: rgba(0, 0, 0, 0.8); /* Darker background for better contrast */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.label-dropdown select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.3); /* Slightly lighter background for the select element */
+  color: #ffffff; /* White text color */
+  font-size: 14px;
+}
+
+/* Search for Labels Menu */
+.search-label-menu {
+  position: absolute;
+  top: 100%; /* Position below the dropdown */
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9); /* Even darker background for high visibility */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* Ensure it’s above other content */
+}
+
+.search-label-menu .label-option {
+  padding: 10px;
+  color: #ffffff; /* White text color */
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-label-menu .label-option:hover {
+  background: rgba(255, 255, 255, 0.2); /* Light hover effect for better visibility */
+}
+
+/* Add Label Button */
+.btn-add-label {
+  background: #ffffff; /* White background */
+  border: 2px solid #ffffff; /* White border */
+  color: rgb(0, 0, 0); /* Black text */
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s;
+  text-align: center;
+}
+
+.btn-add-label:hover {
+  background: #ff6b81; /* Highlight color on hover */
+  border-color: #ff6b81;
+}
+
+/* Hide Button When Not Needed */
+.add-label-container.hidden {
+  display: none;
+}
+/* Label Dropdown Styling */
+.label-dropdown {
+  position: relative;
+  margin-top: 10px;
+  color: black;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.label-dropdown select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  color: black;
+  font-size: 14px;
+}
+
+/* Search for Labels Menu */
+.search-label-menu {
+  position: absolute;
+  top: 100%; /* Position below the dropdown */
+  left: 0;
+  z-index: 9111;
+  width: 100%;
+  color: black;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* Ensure it’s above other content */
+}
+
+.search-label-menu .label-option {
+  padding: 10px;
+  color: #000000 !important; /* White text color */
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-label-menu .label-option:hover {
+  background: rgba(255, 255, 255, 0.2) !important; /* Light hover effect for better visibility */
+}
+
+/* Add Label Button */
+.btn-add-label {
+  background: #ffffff !important; /* White background */
+  border: 2px solid #ffffff !important; /* White border */
+  color: rgb(0, 0, 0) !important; /* Black text */
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s;
+  text-align: center;
+}
+
+.btn-add-label:hover {
+  background: #ff6b81 !important; /* Highlight color on hover */
+  border-color: #ff6b81 !important;
+}
+
+/* Hide Button When Not Needed */
+.add-label-container.hidden {
+  display: none;
+}
+
+/* Label Input Wrapper */
+.label-input-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label Input Field */
+.label-input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-size: 16px;
+  transition: background 0.3s;
+  margin-bottom: 10px;
+}
+
+.label-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Label Dropdown */
+.label-dropdown {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Dropdown Option */
+.label-dropdown option {
+  background: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+}
+
+/* Add New Label Prompt */
+.add-new-label {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  color: #000000;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.add-new-label:hover {
+  background: #ff6b81;
+  color: #ffffff;
+}
+
+.add-new-label svg {
+  margin-right: 8px;
+  font-size: 1.2rem;
+}

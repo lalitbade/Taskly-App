@@ -14,10 +14,10 @@ const Dashboard = () => {
     { name: 'Work', color: '#5bc0de' },
     { name: 'Completed', color: '#5cb85c' }
   ]);
-  const [searchLabel, setSearchLabel] = useState('');
-  // eslint-disable-next-line no-unused-vars
-  const [searchExistingLabel, setSearchExistingLabel] = useState('');
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [labelInput, setLabelInput] = useState('');
+  const [suggestedLabels, setSuggestedLabels] = useState([]);
+  const [showAddLabelPrompt, setShowAddLabelPrompt] = useState(false);
 
   // Fetch tasks for the logged-in user
   useEffect(() => {
@@ -35,7 +35,7 @@ const Dashboard = () => {
         });
         const data = await response.json();
         if (response.ok) {
-          setTasks(data.filter(task => task.userId === user._id)); 
+          setTasks(data.filter(task => task.userId === user._id));
         } else {
           console.error('Failed to fetch tasks:', data.message);
         }
@@ -113,30 +113,39 @@ const Dashboard = () => {
     }
   };
 
-  // Handle label search
-  const handleSearchLabel = (event) => {
-    setSearchLabel(event.target.value);
+  // Handle label input changes (search and create new label)
+  useEffect(() => {
+    const matchingLabels = labels.filter(label => 
+      label.name.toLowerCase().includes(labelInput.toLowerCase())
+    );
+
+    setSuggestedLabels(matchingLabels);
+    setShowAddLabelPrompt(
+      matchingLabels.length === 0 || 
+      !matchingLabels.some(label => label.name.toLowerCase() === labelInput.toLowerCase())
+    );
+  }, [labelInput, labels]);
+
+  const handleLabelChange = (e) => {
+    setLabelInput(e.target.value);
+    if (e.target.value === '') {
+      setShowAddLabelPrompt(false);
+    }
   };
 
-  
-
-  // Filter labels
-  const filteredLabels = labels.filter(label => label.name.toLowerCase().includes(searchExistingLabel.toLowerCase()));
-
-  // Add new label
-  const handleAddLabel = () => {
-    if (searchLabel && !labels.some(label => label.name === searchLabel)) {
-      setLabels([
-        ...labels,
-        { name: searchLabel, color: '#cccccc' } // Default color for new custom labels
-      ]);
-      setSearchLabel('');
+  // Add new label to the labels list
+  const addNewLabel = () => {
+    if (labelInput) {
+      setLabels([...labels, { name: labelInput, color: '#00d5ff' }]);
+      setNewTask({ ...newTask, priority: labelInput });
+      setShowAddLabelPrompt(false);
+      setLabelInput('');
     }
   };
 
   // Get label color
   const getLabelColor = (labelName) => {
-    const label = labels.find(label => label.name === labelName);
+    const label = labels.find(label => label.name.toLowerCase() === labelName.toLowerCase());
     return label ? label.color : '#cccccc'; // Default color if not found
   };
 
@@ -219,47 +228,62 @@ const Dashboard = () => {
       {showAddTaskForm && (
         <div className="label-add-modal">
           <div className="form-content">
-            <button className="close-form" onClick={() => setShowAddTaskForm(false)}><IoMdClose /></button>
+            <button className="close-form" onClick={() => setShowAddTaskForm(false)}>
+              <IoMdClose />
+            </button>
             <h3>Add New Task</h3>
             <input
               type="text"
-              placeholder="Task Title"
+              placeholder="Title"
               value={newTask.title}
               onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
             />
             <textarea
-              placeholder="Task Description"
+              placeholder="Description"
               value={newTask.description}
               onChange={(e) => setNewTask({ ...newTask, description: e.target.value })}
             />
             <input
               type="date"
+              placeholder="Deadline"
               value={newTask.deadline}
               onChange={(e) => setNewTask({ ...newTask, deadline: e.target.value })}
             />
-            <div className="label-options">
-              <div className="label-dropdown">
+            <div className="label-input-wrapper">
+              <input
+                type="text"
+                placeholder="Search or add label"
+                value={labelInput}
+                onChange={handleLabelChange}
+                className="label-input"
+              />
+              {suggestedLabels.length > 0 && (
                 <select
+                  className="label-dropdown"
                   value={newTask.priority}
-                  onChange={(e) => setNewTask({ ...newTask, priority: e.target.value })}
+                  onChange={(e) => {
+                    setNewTask({ ...newTask, priority: e.target.value });
+                    setLabelInput(e.target.value);
+                    setShowAddLabelPrompt(false);
+                  }}
                 >
-                  <option value="" disabled>Select Label</option>
-                  {filteredLabels.map(label => (
-                    <option key={label.name} value={label.name}>{label.name}</option>
+                  <option value="" disabled>Select a label</option>
+                  {suggestedLabels.map((label) => (
+                    <option key={label.name} value={label.name}>
+                      {label.name}
+                    </option>
                   ))}
                 </select>
-              </div>
-              <div className="add-label-container">
-                <input
-                  type="text"
-                  placeholder="Create new label"
-                  value={searchLabel}
-                  onChange={handleSearchLabel}
-                />
-                <button className="btn-add-label" onClick={handleAddLabel}>Add Label</button>
-              </div>
+              )}
+              {showAddLabelPrompt && (
+                <div className="add-new-label" onClick={addNewLabel}>
+                  <FaPlus /> Add "{labelInput}" as a new label
+                </div>
+              )}
             </div>
-            <button className="btn-submit" onClick={handleAddTask}>Add Task</button>
+            <button className="btn-submit" onClick={handleAddTask}>
+              Add Task
+            </button>
           </div>
         </div>
       )}
