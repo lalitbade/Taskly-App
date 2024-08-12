@@ -28,7 +28,7 @@ const Dashboard = () => {
       if (!token || !user) return;
 
       try {
-        const response = await fetch('https://main--api-taskly.netlify.app/api/tasks', {
+        const response = await fetch('https://api.lalitbade.me/api/tasks', {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -56,7 +56,7 @@ const Dashboard = () => {
       if (!token || !user) return;
 
       try {
-        const response = await fetch('https://main--api-taskly.netlify.app/api/tasks', {
+        const response = await fetch('https://api.lalitbade.me/api/tasks', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -93,7 +93,7 @@ const Dashboard = () => {
     }
 
     try {
-      const response = await fetch(`https://main--api-taskly.netlify.app/api/tasks/${taskId}`, {
+      const response = await fetch(`https://api.lalitbade.me/api/tasks/${taskId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
