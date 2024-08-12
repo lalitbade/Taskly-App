@@ -17,7 +17,7 @@ const Signup = () => {
         setError('');
 
         try {
-            const response = await fetch('http://localhost:5001/api/auth/signup', {
+            const response = await fetch('https://main--api-taskly.netlify.app/api/auth/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
