@@ -12,7 +12,7 @@ const Dashboard = () => {
     { name: 'Low Priority', color: '#f0ad4e' },
     { name: 'Urgent', color: '#d9534f' },
     { name: 'Work', color: '#5bc0de' },
-    { name: 'Completed', color: '#5cb85c' }
+    { name: 'High Priority', color: '#5cb85c' }
   ]);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [labelInput, setLabelInput] = useState('');
